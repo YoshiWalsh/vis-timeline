@@ -143,12 +143,20 @@ To build the library from source, clone the project from github
 
     $ git clone git://github.com/visjs/vis-timeline.git
 
+The source code is designed to be built against Node v12.22.12. Using
+other versions of Node is likely to cause builds to fail. You can use
+[nvm](https://github.com/nvm-sh/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)
+to easily install and switch between multiple Node versions.
+
 The source code uses the module style of node (require and module.exports) to
-organize dependencies. To install all dependencies and build the library,
-run `npm install` in the root of the project.
+organize dependencies. To install all dependencies, run `npm ci` in the root
+of the project.
 
     $ cd vis-timeline
-    $ npm install
+    $ npm ci
+
+It is important to *not* run `npm install`, as this will install unsupported
+versions of dependencies and cause build failures.
 
 Then, the project can be build running:
 
